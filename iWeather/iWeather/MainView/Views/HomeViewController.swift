@@ -10,6 +10,9 @@ import SwiftUI
 
 class HomeViewController: UIViewController {
     
+    
+    
+    
     lazy var tableView: UITableView = {
         let tableView = UITableView(frame: .zero, style: .plain)
         tableView.translatesAutoresizingMaskIntoConstraints = false
@@ -24,8 +27,17 @@ class HomeViewController: UIViewController {
         return homeView
     }()
     
+    let mainClass = Main(temp: 20.0, temp_min: 15.0, temp_max: 20.0)
+    
+    let weatherResult: [Weather] = [Weather(id: 100, main: "cloudy", description: "many clouds", icon: "12d"), Weather(id: 100, main: "cloudy", description: "many clouds", icon: "12d"), Weather(id: 100, main: "cloudy", description: "many clouds", icon: "12d"), Weather(id: 100, main: "cloudy", description: "many clouds", icon: "12d")]
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+      
+        
+        
         
         initialSetup()
 //        navigationItem.title = "iWeather"
@@ -36,6 +48,8 @@ class HomeViewController: UIViewController {
     private func initialSetup() {
         self.tableView.delegate = self
         self.tableView.dataSource = self
+        
+        tableView.register(ForecastTableViewCell.self, forCellReuseIdentifier: ForecastTableViewCell.identifier)
         
         configSubViews()
         configConstraints()
@@ -63,17 +77,16 @@ class HomeViewController: UIViewController {
 extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         //return transactions.count
-        return 1
+        return weatherResult.count
       }
       
       func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//          let cell = tableView.dequeueReusableCell(withIdentifier: "TransactionsCell", for: indexPath) as? TransactionCell
-//          cell?.setup(transaction: transactions[indexPath.row])
-          //return cell ?? UITableViewCell()
-          return UITableViewCell()
-      }
+          let cell = tableView.dequeueReusableCell(withIdentifier: ForecastTableViewCell.identifier, for: indexPath) as? ForecastTableViewCell
+          cell?.setupCell(model: weatherResult[indexPath.row])
+          return cell ?? UITableViewCell()
+                }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 50
+        return 70
     }
     
 }

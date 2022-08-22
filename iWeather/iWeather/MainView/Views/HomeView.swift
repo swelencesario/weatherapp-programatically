@@ -186,7 +186,7 @@ class HomeView: UIView {
             self.currentLocationButton.trailingAnchor.constraint(equalTo: starButton.leadingAnchor, constant: -8),
             
             self.nowLocationLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor),
-            self.nowLocationLabel.topAnchor.constraint(equalTo: dateLabel.bottomAnchor, constant: 30),
+            self.nowLocationLabel.topAnchor.constraint(equalTo: dateLabel.bottomAnchor, constant: 20),
             
             self.locationLabel.topAnchor.constraint(equalTo: nowLocationLabel.bottomAnchor, constant: 8),
             self.locationLabel.centerXAnchor.constraint(equalTo: nowLocationLabel.centerXAnchor),
