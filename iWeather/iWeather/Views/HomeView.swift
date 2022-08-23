@@ -24,7 +24,7 @@ class HomeView: UIView {
     
     lazy var nowLocationLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont(name: "Apple SD Gothic Neo Regular 14.0", size: 10)
+        label.font = UIFont(name: "Apple SD Gothic Neo Regular 10.0", size: 10)
         label.textColor = .white
         label.text = "NOW IN"
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -185,19 +185,19 @@ class HomeView: UIView {
             self.locationLabel.topAnchor.constraint(equalTo: nowLocationLabel.bottomAnchor, constant: 8),
             self.locationLabel.centerXAnchor.constraint(equalTo: nowLocationLabel.centerXAnchor),
             
-            self.weatherIcon.topAnchor.constraint(equalTo: locationLabel.bottomAnchor, constant: 16),
+            self.weatherIcon.topAnchor.constraint(equalTo: locationLabel.bottomAnchor, constant: -8),
             self.weatherIcon.centerXAnchor.constraint(equalTo: locationLabel.centerXAnchor),
-            self.weatherIcon.widthAnchor.constraint(equalToConstant: 40),
-            self.weatherIcon.heightAnchor.constraint(equalToConstant: 40),
+//            self.weatherIcon.widthAnchor.constraint(equalToConstant: 40),
+//            self.weatherIcon.heightAnchor.constraint(equalToConstant: 40),
             
-            self.tempLabel.topAnchor.constraint(equalTo: weatherIcon.bottomAnchor, constant: 16),
+            self.tempLabel.topAnchor.constraint(equalTo: weatherIcon.bottomAnchor, constant: -8),
             self.tempLabel.centerXAnchor.constraint(equalTo: weatherIcon.centerXAnchor),
             
             self.descriptionLabel.topAnchor.constraint(equalTo: tempLabel.bottomAnchor, constant: 8),
             self.descriptionLabel.centerXAnchor.constraint(equalTo: tempLabel.centerXAnchor),
             
             self.titleTableViewLabel.topAnchor.constraint(equalTo: descriptionLabel.bottomAnchor, constant: 32),
-            self.titleTableViewLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 16),
+            self.titleTableViewLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 20),
             
         ])
     }

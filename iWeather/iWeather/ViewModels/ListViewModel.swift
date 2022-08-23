@@ -18,7 +18,14 @@ public class ListViewModel {
     var dt_txt: String
     
     var weatherDate: String {
-        return Date(timeIntervalSince1970: TimeInterval(dt)).formatted(date: .abbreviated, time: .omitted)
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "EEE, MMM dd"
+        let dateFormatted = Date(timeIntervalSince1970: TimeInterval(dt))
+        let weekday = dateFormatter.string(from: dateFormatted)
+        
+        return weekday
+        //return Date(timeIntervalSince1970: TimeInterval(dt)).formatted(date: .abbreviated, time: .omitted)
+        //return Date(timeIntervalSince1970: TimeInterval(dt)).formatted(.we)
     }
     
     var currentTemString:String {
