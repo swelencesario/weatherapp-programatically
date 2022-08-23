@@ -8,8 +8,6 @@
 import UIKit
 
 class HomeView: UIView {
-
-    
     
     //MARK: - Labels
     
@@ -28,8 +26,6 @@ class HomeView: UIView {
         let label = UILabel()
         label.font = UIFont(name: "Apple SD Gothic Neo Regular 14.0", size: 10)
         label.textColor = .white
-        //let font = UIFont.systemFont(ofSize: 12, weight: .regular)
-        //label.font = font
         label.text = "NOW IN"
         label.translatesAutoresizingMaskIntoConstraints = false
         
@@ -38,8 +34,6 @@ class HomeView: UIView {
     
     lazy var locationLabel: UILabel = {
         let label = UILabel()
-        //label.font = UIFont(name: "Apple SD Gothic Neo Bold 18.0", size: 18)
-        
         let font = UIFont.systemFont(ofSize: 22, weight: .bold)
         label.font = font
         label.textColor = .white
@@ -139,12 +133,12 @@ class HomeView: UIView {
     //MARK: - Inits
     
     init() {
-
+        
         super.init(frame: .zero)
         
         self.setupViews()
     }
-
+    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -171,7 +165,7 @@ class HomeView: UIView {
     
     private func setupConstraints() {
         NSLayoutConstraint.activate([
-
+            
             self.dateLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 16),
             self.dateLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 30),
             self.dateLabel.centerYAnchor.constraint(equalTo: currentLocationButton.centerYAnchor),
@@ -204,8 +198,8 @@ class HomeView: UIView {
             
             self.titleTableViewLabel.topAnchor.constraint(equalTo: descriptionLabel.bottomAnchor, constant: 32),
             self.titleTableViewLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 16),
-    
-            ])
+            
+        ])
     }
     
     //MARK: - Button Actions
@@ -221,5 +215,5 @@ class HomeView: UIView {
     @objc func searchByCity() {
         
     }
-
+    
 }

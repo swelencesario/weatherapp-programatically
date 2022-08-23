@@ -21,6 +21,18 @@ public class ForecastTableViewCell: UITableViewCell {
         
         return viewCell
     }()
+ 
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        self.contentView.addSubview(self.contentCell)
+        self.backgroundColor = .blue
+
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+    
     
     lazy var dateLabel: UILabel = {
         let label = UILabel()
@@ -28,24 +40,15 @@ public class ForecastTableViewCell: UITableViewCell {
         label.font = font
         label.text = "Ago 13"
         label.textColor = .black
+        label.translatesAutoresizingMaskIntoConstraints = false
         
         return label
     }()
     
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
-        self.contentView.addSubview(self.contentCell)
-        self.backgroundColor = .blue
+    func setupCell(viewModel: ListViewModel) {
+        self.dateLabel.text = viewModel.weatherDate
         
         initialSetup()
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-    }
-    
-    func setupCell(model: Weather) {
-        self.dateLabel.text = model.description
     }
     
     private func initialSetup() {
@@ -54,7 +57,8 @@ public class ForecastTableViewCell: UITableViewCell {
     }
     
     private func configSubViews() {
-        self.addSubview(dateLabel)
+        contentCell.addSubview(dateLabel)
+        //self.addSubview(dateLabel)
     }
     
     private func configConstraints() {
@@ -64,6 +68,10 @@ public class ForecastTableViewCell: UITableViewCell {
             contentCell.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 8),
             contentCell.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -8),
             contentCell.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -8),
+            
+            //dateLabel.topAnchor.constraint(equalTo: contentCell.topAnchor, constant: 8),
+            //dateLabel.leadingAnchor.constraint(equalTo: contentCell.leadingAnchor, constant: 8),
+            dateLabel.centerYAnchor.constraint(equalTo: contentCell.centerYAnchor),
         ])
     }
 }
