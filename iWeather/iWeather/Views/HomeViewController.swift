@@ -20,7 +20,7 @@ class HomeViewController: UIViewController {
         
         return tableView
     }()
-    
+
     private let homeView: HomeView = {
         let homeView = HomeView()
         
@@ -37,19 +37,26 @@ class HomeViewController: UIViewController {
         }
     }
     
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         initialSetup()
         bindElements()
-        //        navigationItem.title = "iWeather"
-        //        navigationItem.backButtonTitle = ""
+      
         self.view.backgroundColor = UIColor(Color("backgroundColor"))
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        let loader = self.loader()
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+            self.stopLoader(loader: loader)
+        }
     }
     
     private func initialSetup() {
+        
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
         locationManager.requestLocation()
@@ -60,19 +67,24 @@ class HomeViewController: UIViewController {
         tableView.register(ForecastTableViewCell.self, forCellReuseIdentifier: ForecastTableViewCell.identifier)
         
         configSubViews()
+        
         configConstraints()
+        
     }
     
     private func configSubViews() {
+        
         self.view.addSubview(tableView)
     }
     
     private func configConstraints() {
         NSLayoutConstraint.activate([
+            
             tableView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
             tableView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor),
             tableView.topAnchor.constraint(equalTo: homeView.titleTableViewLabel.bottomAnchor, constant: 8),
+            
         ])
         
     }

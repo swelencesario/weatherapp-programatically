@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1F185BCB28B519330023E1D6 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F185BCA28B519330023E1D6 /* UIViewExtension.swift */; };
 		1F185BD128B563320023E1D6 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F185BD028B563320023E1D6 /* Constants.swift */; };
+		1F185BD528B668DB0023E1D6 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F185BD428B668DB0023E1D6 /* UIViewControllerExtension.swift */; };
 		1FA132C628B4421600AE32B1 /* ForecastTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA132C528B4421600AE32B1 /* ForecastTableViewCell.swift */; };
 		1FA132CB28B44DF800AE32B1 /* WeatherRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA132CA28B44DF800AE32B1 /* WeatherRepositoryProtocol.swift */; };
 		1FA132CD28B44E4500AE32B1 /* WeatherRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA132CC28B44E4500AE32B1 /* WeatherRepository.swift */; };
@@ -52,6 +53,7 @@
 		1A1E59043CE7C1E0649724C7 /* Pods_iWeatherTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iWeatherTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F185BCA28B519330023E1D6 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		1F185BD028B563320023E1D6 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		1F185BD428B668DB0023E1D6 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		1FA132C528B4421600AE32B1 /* ForecastTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastTableViewCell.swift; sourceTree = "<group>"; };
 		1FA132CA28B44DF800AE32B1 /* WeatherRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherRepositoryProtocol.swift; sourceTree = "<group>"; };
 		1FA132CC28B44E4500AE32B1 /* WeatherRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherRepository.swift; sourceTree = "<group>"; };
@@ -133,6 +135,7 @@
 			children = (
 				1FA132D228B44F5800AE32B1 /* Observable.swift */,
 				1F185BCA28B519330023E1D6 /* UIViewExtension.swift */,
+				1F185BD428B668DB0023E1D6 /* UIViewControllerExtension.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -508,6 +511,7 @@
 				1F185BCB28B519330023E1D6 /* UIViewExtension.swift in Sources */,
 				1FA132D328B44F5800AE32B1 /* Observable.swift in Sources */,
 				1FB588B928A427C5003BAC40 /* AppDelegate.swift in Sources */,
+				1F185BD528B668DB0023E1D6 /* UIViewControllerExtension.swift in Sources */,
 				1FB588BB28A427C5003BAC40 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

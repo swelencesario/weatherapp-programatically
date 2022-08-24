@@ -15,7 +15,7 @@ class HomeView: UIView {
         let label = UILabel()
         let font = UIFont.systemFont(ofSize: 14, weight: .regular)
         label.font = font
-        label.text = "May 4th, 2022"
+        label.text = ""
         label.textColor = .white
         label.translatesAutoresizingMaskIntoConstraints = false
         
@@ -26,7 +26,7 @@ class HomeView: UIView {
         let label = UILabel()
         label.font = UIFont(name: "Apple SD Gothic Neo Regular 10.0", size: 10)
         label.textColor = .white
-        label.text = "NOW IN"
+        label.text = ""
         label.translatesAutoresizingMaskIntoConstraints = false
         
         return label
@@ -37,7 +37,7 @@ class HomeView: UIView {
         let font = UIFont.systemFont(ofSize: 22, weight: .bold)
         label.font = font
         label.textColor = .white
-        label.text = "São Bernardo do Campo"
+        label.text = ""
         label.translatesAutoresizingMaskIntoConstraints = false
         
         return label
