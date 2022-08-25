@@ -111,6 +111,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1F185BD628B6B50C0023E1D6 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				1F185BD428B668DB0023E1D6 /* UIViewControllerExtension.swift */,
+				1F185BCA28B519330023E1D6 /* UIViewExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		1FA132C728B44DA400AE32B1 /* Network */ = {
 			isa = PBXGroup;
 			children = (
@@ -133,9 +142,8 @@
 		1FA132D128B44F4900AE32B1 /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				1F185BD628B6B50C0023E1D6 /* Extensions */,
 				1FA132D228B44F5800AE32B1 /* Observable.swift */,
-				1F185BCA28B519330023E1D6 /* UIViewExtension.swift */,
-				1F185BD428B668DB0023E1D6 /* UIViewControllerExtension.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";

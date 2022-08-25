@@ -20,7 +20,7 @@ class HomeViewController: UIViewController {
         
         return tableView
     }()
-
+    
     private let homeView: HomeView = {
         let homeView = HomeView()
         
@@ -42,7 +42,7 @@ class HomeViewController: UIViewController {
         
         initialSetup()
         bindElements()
-      
+        
         self.view.backgroundColor = UIColor(Color("backgroundColor"))
         
     }
@@ -95,7 +95,6 @@ class HomeViewController: UIViewController {
             
             self?.weatherResults = weatherResults
             self?.homeView.dateLabel.text = self?.viewModel.customDate(weatherResults.first?.dt ?? 0)
-            self?.homeView.dateLabel.text = self?.viewModel.customDate(weatherResults.first?.dt ?? 0)
             self?.homeView.weatherIcon.loadFrom(URLAddress: "https://openweathermap.org/img/wn/"+"\(weatherResults.first?.icon ?? "")"+"@2x.png")
             self?.homeView.tempLabel.text = (self?.weatherResults.first?.currentTemString ?? "") + "°C"
             self?.homeView.descriptionLabel.text = self?.weatherResults.first?.description
@@ -144,7 +143,7 @@ extension HomeViewController: CLLocationManagerDelegate {
             guard let placemark = placemark else {
                 return
             }
-        
+            
             self.homeView.locationLabel.text = placemark.locality
         }
     }
