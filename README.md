@@ -12,6 +12,8 @@
 For this app I've used the resources below:
 
 - Alamofire for API Request
+- Core Location
+- MVVM
 
 ## Installation
 
